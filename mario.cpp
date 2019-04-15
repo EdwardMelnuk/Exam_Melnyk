@@ -2,17 +2,41 @@
 #include <iomanip>
 using namespace std;
 
-	void buildStairs(int height, int choice);
+	void buildStairs(int height, int choice);// оглашение функцый
 	void buildPyramide(int height, int choice2);
 	void Show(int &height, int &choice);
 
 int main()
 {
-
+int height, choice;
+cout << "Enter height:";
+while (!(cin >> height) || (cin.peek() != '\n'))//основной код
+{
+cin.clear();
+while (cin.get() != '\n');
+cout << "Input error! Retry input" << endl;
+}
+cout << "Enter choice:";
+while (!(cin >> choice) || (cin.peek() != '\n'))
+{
+cin.clear();
+while (cin.get() != '\n');
+cout << "Input error! Retry input" << endl;
+}
+switch (choice)
+{
+case 1:
+buildStairs(height, choice);
+break;
+case 2:
+buildPyramide(height, choice);
+break;
+default:
+break;
   system("pause");
   return 0;
 }
-void buildStairs(int height, int choice)
+void buildStairs(int height, int choice)//функции
 {
 for (int i = 0; i < height; i++)
 {
