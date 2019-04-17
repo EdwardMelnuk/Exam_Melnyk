@@ -45,7 +45,7 @@ return IsValid(number);
 }
 bool IsValid(int number)
 {
-if (!cin)
+if (!cin||number<1)
 {
 cin.clear();
 cout << "You entered incorrect symbol or number\n";
@@ -62,9 +62,9 @@ int coins;
 cout << "Number: " << number << endl;
 
 if (number >= 0.01)
-coins = number * 100;
+coins = number * 99.9;
 
-cout << "Coins: " << ++coins << endl;
+    cout << "Coins: " << ++coins << endl;
 
 return coins;
 }
